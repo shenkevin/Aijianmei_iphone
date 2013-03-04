@@ -412,11 +412,6 @@
 		4ADCFEEC169D62C400A3E979 /* Chest-Exercises_s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE76169D62C400A3E979 /* Chest-Exercises_s.jpg */; };
 		4ADCFEEF169D62C400A3E979 /* data_menu_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE79169D62C400A3E979 /* data_menu_1@2x.png */; };
 		4ADCFEF0169D62C400A3E979 /* data_menu_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE7A169D62C400A3E979 /* data_menu_2@2x.png */; };
-		4ADCFEF1169D62C400A3E979 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE7B169D62C400A3E979 /* Default-568h@2x.png */; };
-		4ADCFEF2169D62C400A3E979 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE7C169D62C400A3E979 /* Default-Landscape@2x~ipad.png */; };
-		4ADCFEF3169D62C400A3E979 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE7D169D62C400A3E979 /* Default-Landscape~ipad.png */; };
-		4ADCFEF4169D62C400A3E979 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE7E169D62C400A3E979 /* Default.png */; };
-		4ADCFEF5169D62C400A3E979 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE7F169D62C400A3E979 /* Default@2x.png */; };
 		4ADCFEF6169D62C400A3E979 /* feedback_bg2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE80169D62C400A3E979 /* feedback_bg2@2x.png */; };
 		4ADCFEF7169D62C400A3E979 /* forearm-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE81169D62C400A3E979 /* forearm-exercises.jpg */; };
 		4ADCFEF8169D62C400A3E979 /* hamstring-exercises.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4ADCFE82169D62C400A3E979 /* hamstring-exercises.jpg */; };
@@ -1236,11 +1231,6 @@
 		4ADCFE76169D62C400A3E979 /* Chest-Exercises_s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chest-Exercises_s.jpg"; sourceTree = "<group>"; };
 		4ADCFE79169D62C400A3E979 /* data_menu_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "data_menu_1@2x.png"; sourceTree = "<group>"; };
 		4ADCFE7A169D62C400A3E979 /* data_menu_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "data_menu_2@2x.png"; sourceTree = "<group>"; };
-		4ADCFE7B169D62C400A3E979 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4ADCFE7C169D62C400A3E979 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
-		4ADCFE7D169D62C400A3E979 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		4ADCFE7E169D62C400A3E979 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		4ADCFE7F169D62C400A3E979 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4ADCFE80169D62C400A3E979 /* feedback_bg2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedback_bg2@2x.png"; sourceTree = "<group>"; };
 		4ADCFE81169D62C400A3E979 /* forearm-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "forearm-exercises.jpg"; sourceTree = "<group>"; };
 		4ADCFE82169D62C400A3E979 /* hamstring-exercises.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hamstring-exercises.jpg"; sourceTree = "<group>"; };
@@ -3168,11 +3158,6 @@
 				4ADCFE76169D62C400A3E979 /* Chest-Exercises_s.jpg */,
 				4ADCFE79169D62C400A3E979 /* data_menu_1@2x.png */,
 				4ADCFE7A169D62C400A3E979 /* data_menu_2@2x.png */,
-				4ADCFE7B169D62C400A3E979 /* Default-568h@2x.png */,
-				4ADCFE7C169D62C400A3E979 /* Default-Landscape@2x~ipad.png */,
-				4ADCFE7D169D62C400A3E979 /* Default-Landscape~ipad.png */,
-				4ADCFE7E169D62C400A3E979 /* Default.png */,
-				4ADCFE7F169D62C400A3E979 /* Default@2x.png */,
 				4ADCFE80169D62C400A3E979 /* feedback_bg2@2x.png */,
 				4ADCFE81169D62C400A3E979 /* forearm-exercises.jpg */,
 				4ADCFE82169D62C400A3E979 /* hamstring-exercises.jpg */,
@@ -3644,11 +3629,6 @@
 				4ADCFEEC169D62C400A3E979 /* Chest-Exercises_s.jpg in Resources */,
 				4ADCFEEF169D62C400A3E979 /* data_menu_1@2x.png in Resources */,
 				4ADCFEF0169D62C400A3E979 /* data_menu_2@2x.png in Resources */,
-				4ADCFEF1169D62C400A3E979 /* Default-568h@2x.png in Resources */,
-				4ADCFEF2169D62C400A3E979 /* Default-Landscape@2x~ipad.png in Resources */,
-				4ADCFEF3169D62C400A3E979 /* Default-Landscape~ipad.png in Resources */,
-				4ADCFEF4169D62C400A3E979 /* Default.png in Resources */,
-				4ADCFEF5169D62C400A3E979 /* Default@2x.png in Resources */,
 				4ADCFEF6169D62C400A3E979 /* feedback_bg2@2x.png in Resources */,
 				4ADCFEF7169D62C400A3E979 /* forearm-exercises.jpg in Resources */,
 				4ADCFEF8169D62C400A3E979 /* hamstring-exercises.jpg in Resources */,

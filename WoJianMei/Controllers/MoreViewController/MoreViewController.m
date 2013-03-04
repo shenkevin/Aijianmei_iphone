@@ -20,10 +20,31 @@
 
 
 
-enum actionsheetNumber{
-    LANGUAGE_SELECTION=0,
-    RECOMMENDATION,
+enum ACTION_SHEET_TYPE{
+    SHARE_FRIENDS=0,
+    SHARE_SOCIAL_NET_WORK,
 };
+
+
+
+enum SHARE_FRIENDS_TYPE {
+    WECHATE_FRIENDS= 0,
+    QQ_FRIENDS,
+    EMAIL_FRIENDS ,
+    MESSAGE_FRIENDS ,
+    CANCLE_BUTTON_A
+};
+
+enum SHARE_SOCIAL_NET_WORK_TYPE {
+    SEND_SINA_WEIBO= 0,
+    SEND_TENGXUN_WEIBO,
+    SEND_WECHAT_SOCAIL,
+    SEND_QQ_SPACE,
+    CANCLE_BUTTON_B
+};
+
+
+
 
 typedef enum {
     ACCOUNT_MANAGEMENT = 0,
@@ -269,8 +290,6 @@ typedef enum {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-
     if (indexPath.section==0) {
         NSUInteger row = [indexPath row];
         switch (row) {
@@ -352,13 +371,13 @@ typedef enum {
 
 -(void)shareToSocialnetWorks
 {
-    
+    whichAcctionSheet = SHARE_SOCIAL_NET_WORK;
     UIActionSheet *share = [[UIActionSheet alloc] initWithTitle:nil
                                                        delegate:self
                                               cancelButtonTitle:NSLS(@"取消")
                                          destructiveButtonTitle:NSLS(@"分享到新浪微博")
-                                              otherButtonTitles:NSLS(@"分享到腾讯微博"),NSLS(@"通过邮箱"),NSLS(@"通过短信"),nil];
-    [share showFromTabBar:self.tabBarController.tabBar];
+                                              otherButtonTitles:NSLS(@"分享到腾讯微博"),NSLS(@"微信社交圈"),NSLS(@"QQ空间"),nil];
+   [share showFromTabBar:self.tabBarController.tabBar];
     [share release];
     
 }
@@ -405,17 +424,31 @@ typedef enum {
 - (void)shareToYourFriends
 {
     
-    if ([DeviceDetection isOS6]){
-        
-        [self showAWSheet];
-    }
-    else{
-        whichAcctionSheet = RECOMMENDATION;
-        [self shareToSocialnetWorks];
-        PPDebug(@"Users share to his friends");
+    whichAcctionSheet = SHARE_FRIENDS;
+//    [self shareToSocialnetWorks];
+    PPDebug(@"Users share to his friends");
+
+    UIActionSheet *share = [[UIActionSheet alloc] initWithTitle:nil
+                                                       delegate:self
+                                              cancelButtonTitle:NSLS(@"取消")
+                                         destructiveButtonTitle:NSLS(@"微信好友")
+                                              otherButtonTitles:NSLS(@"QQ好友"),NSLS(@"通过邮箱"),NSLS(@"通过短信"),nil];
+    [share showFromTabBar:self.tabBarController.tabBar];
+    [share release];
+
+
     
-    }
-        
+//    if ([DeviceDetection isOS6]){
+//        
+//        [self showAWSheet];
+//    }
+//    else{
+//        whichAcctionSheet = RECOMMENDATION;
+//        [self shareToSocialnetWorks];
+//        PPDebug(@"Users share to his friends");
+//    
+//    }
+    
 }
 
 -(void)showFeedback{
@@ -463,75 +496,110 @@ typedef enum {
 #pragma mark --actionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    NSString *bodyStringBegin = @"朋友，我正在使用爱健美客户端，学习如何健身，分享，很方便很好用，下载地址是";
+    NSString *bodyStringWebsite = @"http://www.aijianmei.com";
+    NSString *bodyString = [NSString stringWithFormat:@"%@%@", bodyStringBegin, bodyStringWebsite];
     
-    if (  whichAcctionSheet == RECOMMENDATION )
+    
+    if (whichAcctionSheet == SHARE_SOCIAL_NET_WORK )
     {
-        NSString *bodyStringBegin = @"朋友，我正在使用爱健美客户端，学习如何健身，分享，很方便很好用，下载地址是";
-        NSString *bodyStringWebsite = @"http://www.aijianmei.com";
+
+        NSInteger SHARE_SOCIAL_NET_WORK_TYPE ;
+        SHARE_SOCIAL_NET_WORK_TYPE  = buttonIndex;
         
-        NSString *bodyString = [NSString stringWithFormat:@"%@%@", bodyStringBegin, bodyStringWebsite];
-        
-        enum BUTTON_INDEX {
-            
-            SEND_SINA_WEIBO= 0,
-            SEND_TENGXUN_WEIBO,
-            SEND_EMAIL ,
-            SEND_MESSAGE ,
-            CANCLE_BUTTON
-        };
-        
-        
-        NSInteger BUTTON_INDEX ;
-        BUTTON_INDEX  = buttonIndex;
-        
-        
-        switch (BUTTON_INDEX) {
+        switch (SHARE_SOCIAL_NET_WORK_TYPE) {
             case SEND_SINA_WEIBO:
             {
                 
                 ShareToSinaController *sc = [[ShareToSinaController alloc]init];
                 [self.navigationController pushViewController:sc animated:YES];
                 [sc release];
+                PPDebug(@" Send sian weibo");
                 
             }
                 break;
             case SEND_TENGXUN_WEIBO:
             {
-//                ShareToQQWeiboController *sc = [[ShareToQQWeiboController alloc]init];
-//                [self.navigationController pushViewController:sc animated:YES];
-//                [sc release];
-                
+                PPDebug(@" Send tencent weibo");
             }
                 break;
-            case SEND_EMAIL:
+            case SEND_WECHAT_SOCAIL:
                 
             {
-                [self sendEmailTo:nil
-                     ccRecipients:nil
-                    bccRecipients:nil
-                          subject:@"向你推荐爱健美的客户端"
-                             body:bodyString
-                           isHTML:NO
-                         delegate:self];
+               
+                
+                PPDebug(@" Send email");
+
                 
             }
                 break;
-            case SEND_MESSAGE:
+            case SEND_QQ_SPACE:
             {
-                [self sendSms:nil body:bodyString];
+               
             }
                 break;
-            case CANCLE_BUTTON:
+            case CANCLE_BUTTON_A:
             {
                 PPDebug(@"Click the cancle button");
                 
             }
                 break;
-                
             default:
                 break;
         }
     }
+    
+   if (whichAcctionSheet == SHARE_FRIENDS ){
+      
+       NSInteger SHARE_FRIENDS_TYPE ;
+       SHARE_FRIENDS_TYPE  = buttonIndex;
+       switch (SHARE_FRIENDS_TYPE) {
+           case WECHATE_FRIENDS:
+           {
+               PPDebug(@"i am WECHAT friends");
+           }
+               break;
+           case QQ_FRIENDS:
+           {
+               PPDebug(@"i am qq friends");
+           }
+               break;
+               
+           case EMAIL_FRIENDS:
+           {
+               [self sendEmailTo:nil
+                    ccRecipients:nil
+                   bccRecipients:nil
+                         subject:@"向你推荐爱健美的客户端"
+                            body:bodyString
+                          isHTML:NO
+                        delegate:self];
+               PPDebug(@"i am email friends");
+           }
+               break;
+           case MESSAGE_FRIENDS:
+           {
+               [self sendSms:nil body:bodyString];
+               PPDebug(@" Send message ");
+           }
+               break;
+           case CANCLE_BUTTON_B:
+           {
+               PPDebug(@"i am cancle Button");
+           }
+               break;
+               
+           default:
+               break;
+       }
+       
+
+
+}
+
+
+
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
